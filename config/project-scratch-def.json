@@ -1,0 +1,21 @@
+{
+  "orgName": "Interlace Health",
+  "edition": "Developer",
+  "namespace": "interlacehealth",
+  "hasSampleData": true,
+  "settings": {
+      "lightningExperienceSettings": {
+          "enableS1DesktopEnabled": true
+      },
+      "flowSettings": {
+          "enableFlowPauseEnabled": true
+      },
+      "pathAssistantSettings": {
+          "pathAssistantEnabled": true
+      }
+  },
+  "features": [
+      "ForceComPlatform",
+      "PersonAccounts"
+  ]
+}

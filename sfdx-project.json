@@ -1,0 +1,36 @@
+{
+  "packageDirectories": [
+    {
+      "path": "src/projectaspire",
+      "package": "ProjectAspireUnlocked",
+      "versionName": "Version 1.0",
+      "versionDescription": "Interlace Health ProjectAspire",
+      "versionNumber": "0.1.0.NEXT",
+      "definitionFile": "config/project-scratch-def.json",
+      "dependencies": [
+          {
+              "package": "ApexMocks_IH",
+              "versionNumber": "0.1.0.LATEST"
+          },
+          {
+              "package": "ArgsHelpers_IH",
+              "versionNumber": "0.1.0.LATEST"
+          },
+          {
+              "package": "ProjectNextUnlocked",
+              "versionNumber": "0.1.0.LATEST"
+          }
+      ]
+    },
+    {
+      "path": "src/unpackaged"
+    },
+    {
+        "path": "src/untracked",
+        "default": true
+    }
+  ],
+  "namespace": "interlacehealth",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "48.0"
+}
