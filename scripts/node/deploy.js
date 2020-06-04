@@ -13,7 +13,7 @@ const packages = [{
     packageId: '04t0h000001EktFAAS',
 },{
     name: "ProjectNextUnlocked",
-    packageId: "04t0h0000016NYNAA2"
+    packageId: "04t0h0000016NYXAA2"
 }];
 
 const scripts = [{
