@@ -5,7 +5,7 @@
 ### Prerequisites:
 Salesforce CLI with Dev Hub authorized
 
-Node.js *(See below for setup steps, if needed)
+Node.js *(See below for setup steps, if needed)*
 
 ### Create and Configure Scratch Org:
 From the project root directory, run 
