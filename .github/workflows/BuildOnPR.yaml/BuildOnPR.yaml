@@ -33,13 +33,13 @@ jobs:
       env:
         INSTALLATION_KEY: ${{ secrets.FF_APP_INSTALL_PW }}
 
-    - name: Install ArgsHelper Package
-      run: sfdx force:package:install --package ArgsHelpers_IH@0.1.0-2 -w 30 -k $INSTALLATION_KEY -s AllUsers
+    - name: Install ApexUtils Package
+      run: sfdx force:package:install --package ApexUtils_IH@0.1.0-6 -w 30 -k $INSTALLATION_KEY -s AllUsers
       env:
         INSTALLATION_KEY: ${{ secrets.FF_APP_INSTALL_PW }}
 
     - name: Install ProjectNext Package
-      run: sfdx force:package:install --package ProjectNextUnlocked@0.1.0-8 -w 30 -k $INSTALLATION_KEY -s AllUsers
+      run: sfdx force:package:install --package ProjectNextUnlocked@0.1.0-10 -w 30 -k $INSTALLATION_KEY -s AllUsers
       env:
         INSTALLATION_KEY: ${{ secrets.FF_APP_INSTALL_PW }}
 
