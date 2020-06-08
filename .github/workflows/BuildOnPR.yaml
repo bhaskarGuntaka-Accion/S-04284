@@ -31,22 +31,22 @@ jobs:
     - name: Install ApexMocks Package
       run: sfdx force:package:install --package ApexMocks_IH@0.1.0-5 -w 30 -k $INSTALLATION_KEY -s AllUsers
       env:
-        INSTALLATION_KEY: ${{ secrets.FF_APP_INSTALL_PW }}
+        INSTALLATION_KEY: ${{ secrets.INSTALLATION_KEY }}
 
     - name: Install ApexUtils Package
       run: sfdx force:package:install --package ApexUtils_IH@0.1.0-6 -w 30 -k $INSTALLATION_KEY -s AllUsers
       env:
-        INSTALLATION_KEY: ${{ secrets.FF_APP_INSTALL_PW }}
+        INSTALLATION_KEY: ${{ secrets.INSTALLATION_KEY }}
 
     - name: Install ProjectNext Package
       run: sfdx force:package:install --package ProjectNextUnlocked@0.1.0-10 -w 30 -k $INSTALLATION_KEY -s AllUsers
       env:
-        INSTALLATION_KEY: ${{ secrets.FF_APP_INSTALL_PW }}
+        INSTALLATION_KEY: ${{ secrets.INSTALLATION_KEY }}
 
     # - name: Install NextViewer Package
     #   run: sfdx force:package:install --package NextViewer@0.1.0.1 -w 30 -k $INSTALLATION_KEY -s AllUsers
     #   env:
-    #     INSTALLATION_KEY: ${{ secrets.FF_APP_INSTALL_PW }}
+    #     INSTALLATION_KEY: ${{ secrets.INSTALLATION_KEY }}
 
     - name: Push Source
       run: sfdx force:source:push
