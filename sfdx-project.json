@@ -13,7 +13,7 @@
               "versionNumber": "0.1.0.LATEST"
           },
           {
-              "package": "ArgsHelpers_IH",
+              "package": "ApexUtils_IH",
               "versionNumber": "0.1.0.LATEST"
           },
           {
@@ -32,5 +32,13 @@
   ],
   "namespace": "interlacehealth",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "48.0"
+  "sourceApiVersion": "48.0",
+  "packageAliases": {
+    "ApexMocks_IH": "0Ho0h000000PAscCAG",
+    "ApexMocks_IH@0.1.0-5": "04t0h000001IrZEAA0",
+    "ApexUtils_IH": "0Ho0h000000blJiCAI",
+    "ApexUtils_IH@0.1.0-6": "04t0h0000016NZ1AAM",
+    "ProjectNextUnlocked": "0Ho0h000000PAshCAG",
+    "ProjectNextUnlocked@0.1.0-10": "04t0h0000016NZ6AAM"
+  }
 }

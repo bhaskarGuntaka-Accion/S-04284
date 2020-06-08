@@ -9,11 +9,11 @@ const packages = [{
     name: 'ApexMocks',
     packageId: '04t0h000001IrZEAA0',
 },{
-    name: 'ArgsHelper',
-    packageId: '04t0h000001EktFAAS',
+    name: 'ApexUtils_IH',
+    packageId: '04t0h0000016NZ1AAM',
 },{
     name: "ProjectNextUnlocked",
-    packageId: "04t0h0000016NYXAA2"
+    packageId: "04t0h0000016NZ6AAM"
 }];
 
 const scripts = [{
