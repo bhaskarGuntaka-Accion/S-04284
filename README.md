@@ -13,7 +13,7 @@ From the project root directory, run
 (Windows)
 
 ```
-scripts/dev-init.bat -p <org alias to create> -u <installation key> 
+scripts/dev-init.bat -u <org alias to create> -p <installation key> 
 ```
 
 or 
@@ -21,7 +21,7 @@ or
 (MacOS/Linux)
 
 ```
-scripts/dev-init.sh -p <org alias to create> -u <installation key>
+scripts/dev-init.sh -u <org alias to create> -p <installation key>
 ```
 
 *If you receive a permission denied error on Mac, you may need to change the permissions on the shell script. From the script directory, run* 
