@@ -10,7 +10,7 @@ const packages = [{
     packageId: '04t0h000001IrZEAA0',
 },{
     name: 'ApexUtils_IH',
-    packageId: '04t0h0000016NZ1AAM',
+    packageId: '04t0h0000016NZGAA2',
 },{
     name: "ProjectNextUnlocked",
     packageId: "04t0h0000016NZ6AAM"
