@@ -11,6 +11,7 @@ public class PlatformAppUser extends TestUsers.PlatformUser {
         FROM PermissionSet
         WHERE Name = 'Interlace_Health_Preregistration_Clinician' LIMIT 1
     ];
+    //Call the methods.
 
     public PlatformAppUser() {
         super();
