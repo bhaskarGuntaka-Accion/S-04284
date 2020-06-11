@@ -1,0 +1,258 @@
+{
+    "new-mock": {
+        "prefix": "rec",
+        "body": [
+            "${1:return (${2:type})}super.recordAndInvoke('${3:methodName}', new List<Object> { ${4:params} });"
+        ]
+    },
+
+    "new test": {
+        "prefix": "unit",
+        "body": [
+            "@isTest",
+            "static void ${1:method}_${2:variant}() {",
+                "\tSystem.runAs(TestUtil.createFFAdmin()) {",
+                "\t\t//arrange",
+                "\t\t${0}",
+                "\t\t//act",
+                "\t\t",
+                "\t\t//assert",
+                "\t\t",
+                "\t}",
+            "}"
+        ]
+    },
+
+    "new integration test": {
+        "prefix": "intr",
+        "body": [
+            "@isTest",
+            "static void ${1|SuperUser,StandardAppUser,PlatformAppUser|}_${2:method}_${3:variant}() {",
+                "\tSystem.runAs(new $1().toUser()) {",
+                "\t\t//arrange",
+                "\t\t${0}",
+                "\t\t//act",
+                "\t\t",
+                "\t\t//assert",
+                "\t\t",
+                "\t}",
+            "}"
+        ]
+    },
+
+    "arrange act assert": {
+        "prefix": "aaa",
+        "body": [
+            "//arrange",
+            "${0}",
+            "",
+            "//act",
+            "",
+            "//assert",
+            "",
+        ]
+    },
+
+    "new grouped user test": {
+        "prefix": "grp_intr",
+        "body": [
+            "private static void ${1:method}_${2:variant}() {",
+                "\t${0}",
+            "}",
+            "",
+            "@isTest",
+            "static void superUser_$1_$2() {",
+                "\tSystem.runAs(new SuperUser().toUser()) {",
+                "\t\t$1_$2();",
+                "\t}",
+            "}",
+            "",
+            "@isTest",
+            "static void standardAppUser_$1_$2() {",
+                "\tSystem.runAs(new StandardAppUser().toUser()) {",
+                "\t\t$1_$2();",
+                "\t}",
+            "}",
+            "",
+            "@isTest",
+            "static void platformAppUser_$1_$2() {",
+                "\tSystem.runAs(new PlatformAppUser().toUser()) {",
+                "\t\t$1_$2();",
+                "\t}",
+            "}",
+        ]
+    },
+
+    "new-exception-test": {
+        "prefix": "extest",
+        "body": [
+            "//arrange",
+            "${0}",
+            "//act",
+            "try{",
+                "\t",
+                "\t//assert",
+                "\tSystem.assert(false, 'Exception expected but non thrown');",
+            "}",
+            "catch (${3:Type}Exception ex) {",
+                "\tSystem.assert(true, 'Exception Expected');",
+            "}",
+            "catch (Exception ex) {",
+                "\tSystem.assert(false, 'Exception Expected, but not this type:' + ex);",
+            "}"
+        ]
+    },
+
+    "assert": {
+        "prefix": "as",
+        "body": [
+            "System.assert(${1:condition}${2:, ${3:message}});"
+        ]
+    },
+
+    "assertEquals": {
+        "prefix": "aseq",
+        "body": [
+            "System.assertEquals(${1:expected}, ${2:actual}${3:, ${4:message}});"
+        ]
+    },
+
+    "argument is null exception": {
+        "prefix": "argnull",
+        "body": [
+            "if (${1:object} == null) throw new CustomException.ArgumentNullException('${1:object} cannot be null');"
+        ]
+    },
+
+    "argument invalid exception": {
+        "prefix": "arginv",
+        "body": [
+            "if (${1:object} ${2:equals condition}) throw new CustomException.InvalidArgumentException('${1:object} is invalid${3: why}');"
+        ]
+    },
+    "default constructor": {
+        "prefix": "ctor",
+        "body": [
+            "public ${1:$TM_FILENAME_BASE()} {${0}}"
+        ]
+    },
+
+    "constructor with 1 param": {
+        "prefix": "ctor1",
+        "body": [
+            "private final ${2:param1Type} ${3:param1Name};",
+            "",
+            "public ${1:$TM_FILENAME_BASE}(${2:param1Type} ${3:param1Name}) {",
+            "\tArgs.isNotNull(${3}, '${3}');",
+            "",
+            "\tthis.${3:param1Name} = ${3:paramName};",
+            "}"
+        ]
+    },
+
+    "constructor with 2 params": {
+        "prefix": "ctor2",
+        "body": [
+            "private final ${2:param1Type} ${3:param1Name};",
+            "private final ${4:param1Type} ${5:param2Name};",
+            "",
+            "public ${1:$TM_FILENAME_BASE}(${2:param1Type} ${3:param1Name}, ${4:param1Type} ${5:param2Name}) {",
+            "\tArgs.isNotNull(${3}, '${3}');",
+            "\tArgs.isNotNull(${5}, '${5}');",
+            "",
+            "\tthis.${3:param1Name} = ${3:paramName};",
+            "\tthis.${5:param1Name} = ${5:paramName};",
+            "}"
+        ]
+    },
+
+    "constructor with 3 params": {
+        "prefix": "ctor3",
+        "body": [
+            "private final ${2:param1Type} ${3:param1Name};",
+            "private final ${4:param1Type} ${5:param1Name};",
+            "private final ${6:param1Type} ${7:param1Name};",
+            "",
+            "public ${1:$TM_FILENAME_BASE}(${2:param1Type} ${3:param1Name}, ${4:param1Type} ${5:param1Name}, ${6:param1Type} ${7:param1Name}) {",
+            "\tArgs.isNotNull(${3}, '${3}');",
+            "\tArgs.isNotNull(${5}, '${5}');",
+            "\tArgs.isNotNull(${7}, '${7}');",
+            "",
+            "\tthis.${3:param1Name} = ${3:paramName};",
+            "\tthis.${5:param1Name} = ${5:paramName};",
+            "\tthis.${7:param1Name} = ${5:paramName};",
+            "}"
+        ]
+    },
+
+    "param set": {
+        "prefix": "pset",
+        "body": [
+            "this.${1:param} = ${1};"
+        ]
+    },
+
+    "field create": {
+        "prefix": "field",
+        "body": [
+            "${1|private,public,protected|}${2: final} ${3:type} ${4:name};"
+        ]
+    },
+
+    "mock template": {
+        "prefix": "templ_mock",
+        "body": [
+            "@isTest",
+            "public class $TM_FILENAME_BASE extends TestMock.Mock implements ${1:interface} {",
+            "\t${0}",
+            "}"
+        ]
+    },
+
+    "interface template": {
+        "prefix": "templ_inter",
+        "body": [
+            "public interface ${1:$TM_FILENAME_BASE}${2: extends ${3:interface}} {",
+            "\t${0}",
+            "}"
+        ]
+    },
+
+    "test class template": {
+        "prefix": "templ_test",
+        "body": [
+            "@isTest",
+            "public class $TM_FILENAME_BASE {",
+            "\t${0}",
+            "}"
+        ]
+    },
+
+    "get invocations from mock": {
+        "prefix": "mockgetinv",
+        "body": [
+            "${1:mock}.getInvocations('${2:methodName}', new Object[]{ ${3:parameters} })"
+        ]
+    },
+
+    "Args is not null": {
+        "prefix": "notnull",
+        "body": [
+            "Args.isNotNull(${1:arg}, '${1}');"
+        ]
+    },
+
+    "private final field": {
+        "prefix": "pff",
+        "body": [
+            "private final ${1:Object} ${2:name};"
+        ]
+    },
+
+    "set arg": {
+        "prefix": "setarg",
+        "body": [
+            "this.${1:arg} = ${2:${1}};"
+        ]
+    }
+}
